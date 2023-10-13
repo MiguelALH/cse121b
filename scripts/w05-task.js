@@ -6,24 +6,26 @@ let templeList = [];
 
 /* async displayTemples Function */
 const displayTemples = (temples) => {
-    temples.forEach((temple) => {
-        let article = document.createElement("article");
-        let h3 = document.createElement("h3");
-        h3.textContent = temple.templeName;
-        let img = document.createElement("img");
-        img.setAttribute("src", temple.imageUrl);
-        img.setAttribute("alt", temple.location);
-        article.appendChild(h3);
-        article.appendChild(img);
-        templesElement.appendChild(article);
-    });
+  temples.forEach((temple) => {
+    let article = document.createElement("article");
+    let h3 = document.createElement("h3");
+    h3.textContent = temple.templeName;
+    let img = document.createElement("img");
+    img.setAttribute("src", temple.imageUrl);
+    img.setAttribute("alt", temple.location);
+    article.appendChild(h3);
+    article.appendChild(img);
+    templesElement.appendChild(article);
+  });
 };
 
 /* async getTemples Function using fetch()*/
 const getTemples = async () => {
-    const response = await fetch("https://byui-cse.github.io/cse121b-ww-course/resources/temples.json");
-    templeList = await response.json();
-    displayTemples(templeList);
+  const response = await fetch(
+    "https://byui-cse.github.io/cse121b-ww-course/resources/temples.json"
+  );
+  templeList = await response.json();
+  displayTemples(templeList);
 };
 
 /* reset Function */
@@ -42,7 +44,6 @@ const sortBy = (temples) => {
       );
       break;
     case "notutah":
-
       displayTemples(
         temples.filter((temple) => !temple.location.includes("Utah"))
       );
@@ -60,8 +61,9 @@ const sortBy = (temples) => {
   }
 };
 
-
 getTemples();
 
 /* Event Listener */
-document.querySelector("#sortBy").addEventListener("change", () => sortBy(templeList));
+document
+  .querySelector("#sortBy")
+  .addEventListener("change", () => sortBy(templeList));
