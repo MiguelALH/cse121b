@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSE 121b | W06: Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/project.css" />
+  </head>
+  <body>
+    <nav>
+      <ul id="menu">
+        <li><a id="toggleMenu">&equiv;</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="w01-task.html">W1 Task</a></li>
+        <li><a href="w03-task.html">W3 Task</a></li>
+        <li><a href="w04-task.html">W4 Task</a></li>
+        <li><a href="w05-task.html">W5 Task</a></li>
+        <li><a href="project.html" class="active">Project</a></li>
+      </ul>
+    </nav>
+
+    <main id="gridly">
+      <h1 class="heading">W06: Project</h1>
+      <h2>Weather App</h2>
+      <section class="top-banner">
+        <form>
+          <input type="text" placeholder="City name e.g Salt Lake" autofocus />
+          <button type="submit">SUBMIT</button>
+        </form>
+        <span class="msg"></span>
+      </section>
+    </main>
+
+    <section class="cities-section">
+      <div class="container">
+        <ul class="cities"></ul>
+      </div>
+    </section>
+
+    <footer>
+      &copy;<span id="year"></span> | Week 06 - Project | CSE 121b
+    </footer>
+    <script src="scripts/main.js"></script>
+    <script>
+      document.getElementById("year").innerHTML = new Date().getFullYear();
+    </script>
+    <script type="module" src="scripts/project.js"></script>
+  </body>
+</html>
